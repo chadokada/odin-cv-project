@@ -1,7 +1,27 @@
-.App {
-  text-align: center;
+body{
+  height: 100vh;
+  overflow: hidden;
 }
 
+#root{
+  height: 100%;
+}
+
+.App {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 1em;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.resume-render{
+  border: 1px solid black;
+  grid-column: 2/3;
+  height: 100%;
+}
+
+/*
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -36,3 +56,4 @@
     transform: rotate(360deg);
   }
 }
+*/
