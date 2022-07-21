@@ -8,17 +8,58 @@ body{
 }
 
 .App {
+  /*
   display: grid;
   grid-template-columns: 1fr 1fr;
+  */
+  display: flex;
+  background-color: gray;
   padding: 1em;
+  padding-left: 10em;
+  padding-right: 10em;
   height: 100%;
   box-sizing: border-box;
 }
 
+.user-inputs{
+  border: 1px solid red;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+}
+
 .resume-render{
   border: 1px solid black;
-  grid-column: 2/3;
+  background-color: white;
+  padding: 1em;
   height: 100%;
+  aspect-ratio: 8.5/11;
+  box-sizing: border-box;
+}
+
+/*
+Styles for Info section
+*/
+
+.info{
+  border-bottom:1px solid black;
+  height: auto;
+  padding-bottom: 0.5em;
+}
+
+.name{
+  font-size: 2.5em;
+  font-weight: bold;
+  padding-bottom: 0.5rem;
+}
+
+.info-blank{
+  width: 2em;
+}
+
+th{
+  text-align: start;
+  padding-right: 1em;
 }
 
 /*

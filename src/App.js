@@ -16,11 +16,33 @@ class App extends Component {
     }
   }
 
+  handleInfoChange = (event) => {
+    const infoKey = event.target.id;
+    
+    this.setState({
+      info[infoKey] = event.target.value,
+    })
+    console.log(this.state.info[infoKey])
+  }
+
 
   render(){
     return (
       <div className="App">
-        <div className="user-inputs"></div>
+        <div className="user-inputs">
+          <form > {/*</div>onSubmit={this.onSubmitTask}>*/}
+            <label htmlFor="name">Name:</label>
+            <input 
+              onChange={this.handleInfoChange}
+              type="text" 
+              id="name"
+            />
+            
+            
+          </form>
+
+
+        </div>
 
         <div className="resume-render">
           <Info />
