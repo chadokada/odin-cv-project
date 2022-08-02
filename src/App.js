@@ -7,11 +7,13 @@ class App extends Component {
     super();
     this.state = {
       info: {
-        name: '',
-        phone: '',
-        email: '',
-        linkedIn: '',
-        gitHub: '',
+        name: 'John Doe',
+        address1: '123 Main Street',
+        address2: 'Anytown, USA 12345',
+        phone: '(123)456-7890',
+        email: 'johndoe@email.com',
+        linkedIn: 'johndoe123',
+        gitHub: 'johndoe123',
       }
     }
   }
@@ -19,33 +21,104 @@ class App extends Component {
   handleInfoChange = (event) => {
     const infoKey = event.target.id;
     
+    const tempState = this.state.info;
+    delete tempState[infoKey]
+    tempState[infoKey] = event.target.value;
+
     this.setState({
-      info[infoKey] = event.target.value,
+      info : tempState
     })
-    console.log(this.state.info[infoKey])
   }
 
 
   render(){
+    const {info} = this.state;
+
     return (
-      <div className="App">
-        <div className="user-inputs">
-          <form > {/*</div>onSubmit={this.onSubmitTask}>*/}
-            <label htmlFor="name">Name:</label>
-            <input 
-              onChange={this.handleInfoChange}
-              type="text" 
-              id="name"
-            />
+      <div className="resume-container">
+
+        <div className="resume-inputs">
+
+        <fieldset className="personal-info">
+          <legend>Personal Information</legend>
+            <p>
+              <label htmlFor="name">Name:</label>
+              <input 
+                onChange={this.handleInfoChange}
+                type="text" 
+                id="name"
+                value={info.name}
+              />
+            </p>
+
+            <p>
+              <label htmlFor="address1">Address:</label>
+              <input 
+                onChange={this.handleInfoChange}
+                type="text" 
+                id="address1"
+                value={info.address1}
+              />
+            </p>
+
+            <p>
+              <label htmlFor="address2"></label>
+              <input 
+                onChange={this.handleInfoChange}
+                type="text" 
+                id="address2"
+                value={info.address2}
+              />
+            </p>
+
+            <p>
+              <label htmlFor="phone">Phone:</label>
+              <input 
+                onChange={this.handleInfoChange}
+                type="text" 
+                id="phone"
+                value={info.phone}
+              />
+            </p>
+
+            <p>
+              <label htmlFor="email">Email:</label>
+              <input 
+                onChange={this.handleInfoChange}
+                type="text" 
+                id="email"
+                value={info.email}
+              />
+            </p>
+
+            <p>
+              <label htmlFor="linkedIn">LinkedIn:</label>
+              <input 
+                onChange={this.handleInfoChange}
+                type="text" 
+                id="linkedIn"
+                value={info.linkedIn}
+              />
+            </p>
+
+            <p>
+              <label htmlFor="gitHub">GitHub:</label>
+              <input 
+                onChange={this.handleInfoChange}
+                type="text" 
+                id="gitHub"
+                value={info.gitHub}
+              />
+            </p>
+          
+        </fieldset>
             
-            
-          </form>
 
 
         </div>
 
         <div className="resume-render">
-          <Info />
+          <Info info={info}/>
         </div>
       </div>
     );
