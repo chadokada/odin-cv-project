@@ -1,45 +1,81 @@
 body{
   height: 100vh;
+  /*
   overflow: hidden;
+  */
 }
 
 #root{
   height: 100%;
 }
 
-.App {
+.resume-container {
   /*
   display: grid;
   grid-template-columns: 1fr 1fr;
-  */
-  display: flex;
-  background-color: gray;
-  padding: 1em;
-  padding-left: 10em;
-  padding-right: 10em;
+    padding-left: 5em;
+  padding-right: 5em;
   height: 100%;
+  */
+  background-color: gray; /* Remove this when style is finalized*/
+  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1em;
+  gap: 40px;
   box-sizing: border-box;
 }
 
-.user-inputs{
+.resume-inputs{
   border: 1px solid red;
   background-color: white;
-  width: 100%;
-  height: 100%;
+  width: 600px;
+  font-size: 0.85em;
 }
+
+fieldset{
+  padding: 0.25em;
+}
+
+p{
+  margin: 0;
+}
+
+label{
+  display: inline-block;
+  width: 50px;
+  /*
+  text-align: right;
+  */
+  padding-right: 15px;
+}
+
+.personal-info input{
+  width: 150px;
+}
+
+.personal-info{
+  display: flex;
+  flex-flow: column wrap;
+  height: 100px;
+}
+
+/*
+Styles for the rendered resume
+*/
 
 .resume-render{
   border: 1px solid black;
   background-color: white;
   padding: 1em;
-  height: 100%;
+  height: 943px;
+  width: 728.68px;
+  /*
   aspect-ratio: 8.5/11;
+  */
   box-sizing: border-box;
 }
-
-/*
-Styles for Info section
-*/
 
 .info{
   border-bottom:1px solid black;
