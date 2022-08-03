@@ -62,19 +62,20 @@ label{
 }
 
 /*
-Styles for the rendered resume
+// Styles for the rendered resume
 */
 
 .resume-render{
   border: 1px solid black;
   background-color: white;
-  padding: 1em;
+  padding: 43px;
   height: 943px;
   width: 728.68px;
   /*
   aspect-ratio: 8.5/11;
   */
   box-sizing: border-box;
+  font-size: 0.75em;
 }
 
 .info{
@@ -97,6 +98,40 @@ th{
   text-align: start;
   padding-right: 1em;
 }
+
+.experience{
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: 1em;
+}
+
+h2{
+  margin: 0;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.experience-heading {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 0.5em;
+}
+
+.experience-title {
+  font-size: 1.25em;
+  font-weight: bold;
+}
+
+.experience-company{
+  width: 100%;
+  font-style: italic;
+  font-size: 1.15em;
+  margin-bottom: 0.25em;
+}
+
+
 
 /*
 .App-logo {
