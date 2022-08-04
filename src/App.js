@@ -26,23 +26,8 @@ class App extends Component {
       },
       experiences: [
         {
-          company: "Satriale's Pork Store",
           title: 'Senior Meat Associate',
-          start: 'January 1999',
-          end: 'June 2007',
-          description: `Cut meat, talk to customers, take it ease, 
-                        cut meat, talk to customers, take it ease,
-                        cut meat, talk to customers, take it ease,
-                        cut meat, talk to customers, take it ease,
-                        cut meat, talk to customers, take it ease,
-                        cut meat, talk to customers, take it ease,
-                        cut meat, talk to customers, take it ease
-                        `,
-          id: uniqid(),
-        },
-        {
           company: "Satriale's Pork Store",
-          title: 'Senior Meat Associate',
           start: 'January 1999',
           end: 'June 2007',
           description: `Cut meat, talk to customers, take it ease, 
@@ -154,7 +139,117 @@ class App extends Component {
               </p>
             
           </fieldset>
-              
+
+
+
+          <fieldset className="experiences">
+            <legend>Experiences</legend>
+
+            {this.state.experiences.map((experience) => {
+              return(
+                <span>
+
+                  <div className="experience-input-row">
+                    <div className="experience-input-container">
+                      <label htmlFor="experience-input-title">Title:</label>
+                      <input 
+                        type="text" 
+                        id="experience-input-title"
+                        placeholder={experience.title}
+                      />
+                    </div>
+                    
+                    <div className="experience-input-container">
+                      <label htmlFor="experience-input-company">Company:</label>
+                      <input 
+                        type="text" 
+                        id="experience-input-company"
+                        placeholder={experience.company}
+                      />
+                    </div>
+                  </div>
+
+                  <div className="experience-input-row">
+                    <div className="experience-input-container">
+                      <label htmlFor="experience-input-start">Start Date:</label>
+                      <input 
+                        type="text" 
+                        id="experience-input-start"
+                        placeholder={experience.start}
+                      />
+                    </div>
+
+                    <div className="experience-input-container">
+                      <label htmlFor="experience-input-end">End Date:</label>
+                      <input 
+                        type="text" 
+                        id="experience-input-end"
+                        placeholder={experience.end}
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="experience-input-description-container">
+                    <label htmlFor="experience-input-description">Description:</label>
+                    <textarea 
+                      id="experience-input-description"
+                      placeholder={experience.description}
+                    >
+                    </textarea>
+                  </div>
+
+
+                </span>
+              )
+            })}
+      {/*
+                  <div className="experience-input-row">
+                    <div className="experience-input-container">
+                      <label htmlFor="experience-input-title">Title:</label>
+                      <input 
+                        type="text" 
+                        id="experience-input-title"
+                      />
+                    </div>
+                    
+                    <div className="experience-input-container">
+                      <label htmlFor="experience-input-company">Company:</label>
+                      <input 
+                        type="text" 
+                        id="experience-input-company"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="experience-input-row">
+                    <div className="experience-input-container">
+                      <label htmlFor="experience-input-start">Start Date:</label>
+                      <input 
+                        type="text" 
+                        id="experience-input-start"
+                      />
+                    </div>
+
+                    <div className="experience-input-container">
+                      <label htmlFor="experience-input-end">End Date:</label>
+                      <input 
+                        type="text" 
+                        id="experience-input-end"
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="experience-input-description-container">
+                    <label htmlFor="experience-input-description">Description:</label>
+                    <textarea id="experience-input-description"></textarea>
+                  </div>
+        */}
+
+
+          </fieldset>
+
+
+
         </div>
 
         <div className="resume-render">
