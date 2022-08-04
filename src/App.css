@@ -44,15 +44,8 @@ p{
 
 label{
   display: inline-block;
-  width: 50px;
-  /*
-  text-align: right;
-  */
-  padding-right: 15px;
-}
-
-.personal-info input{
-  width: 150px;
+  padding-right: 5px;
+  text-align: end;
 }
 
 .personal-info{
@@ -61,6 +54,41 @@ label{
   height: 100px;
 }
 
+.personal-info label{
+  display: inline-block;
+  width: 55.45px;
+}
+
+.personal-info input{
+  width: 150px;
+}
+
+
+.experiences{
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.experiences label{
+  width: 74.45px;
+}
+
+.experiences input{
+  width: 200px;
+}
+
+.experience-input-row,
+.experience-input-description-container{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.experience-input-description-container textarea{
+  flex: 1;
+  box-sizing: border-box;
+}
 /*
 // Styles for the rendered resume
 */
