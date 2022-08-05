@@ -163,7 +163,7 @@ th{
   width: 100%;
   display: flex;
   flex-flow: row wrap;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
 }
 
 h2{
@@ -177,7 +177,7 @@ h2{
   display: flex;
   justify-content: space-between;
   align-items: end;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.25em;
 }
 
 .experience-render-title {
