@@ -9,23 +9,54 @@ class Experience extends Component {
     const { experiences } = this.props;
 
     return (
-      <div className="experience">
-        <h2>Professional Experience</h2>
+      <div className="experiences-render-container">
+        
 
         
-        {experiences.map((experience) => {
-          return( 
-            <div className='experience'>
-              <div className='experience-heading'>
-                <div className='experience-title'>{experience.title}</div>
-                <div className='experience-date'>
-                  {experience.start} - {experience.end}
+        {experiences.map((experience, index) => {
+          if (index === 0){
+            return( 
+              <div className='experience-render'>
+                <h2>Professional Experience</h2>
+                <div className='experience-render' key={index}>
+                  <div className='experience-render-heading'>
+                    <div className='experience-render-title'>
+                      {experience.title}
+                    </div>
+                    <div className='experience-render-date'>
+                      {experience.start} - {experience.end}
+                    </div>
+                  </div>
+                  <div className='experience-render-company'>
+                    {experience.company}
+                  </div>
+                  <div className='experience-render-description'>
+                    {experience.description}
+                  </div>
                 </div>
               </div>
-              <div className='experience-company'>{experience.company}</div>
-              <div className='experience-description'>{experience.description}</div>
-            </div>
-          )
+            )
+          } else {
+            return( 
+              <div className='experience-render' key={index}>
+                <div className='experience-render-heading'>
+                  <div className='experience-render-title'>
+                    {experience.title}
+                  </div>
+                  <div className='experience-render-date'>
+                    {experience.start} - {experience.end}
+                  </div>
+                </div>
+                <div className='experience-render-company'>
+                  {experience.company}
+                </div>
+                <div className='experience-render-description'>
+                  {experience.description}
+                </div>
+              </div>
+            )
+          }
+
 
         })}
 
