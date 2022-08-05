@@ -128,6 +128,7 @@ th{
 }
 
 .experience{
+  width: 100%;
   display: flex;
   flex-flow: row wrap;
   margin-bottom: 1em;
