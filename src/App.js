@@ -76,13 +76,21 @@ class App extends Component {
       end: '',
       description: '' 
     }
-
     const tempExperiences = this.state.experiences;
     tempExperiences.push(experience);
+
     this.setState({
       experiences : tempExperiences
     })
+  }
 
+  removeExperience = (index) => {
+    const tempExperiences = this.state.experiences;
+    tempExperiences.splice(index, 1);
+    
+    this.setState({
+      experiences: tempExperiences
+    })
   }
 
   render(){
@@ -167,17 +175,22 @@ class App extends Component {
             
           </fieldset>
 
-
-
           <fieldset className="experiences">
             <legend>Experiences</legend>
 
             {this.state.experiences.map((experience, index) => {
               return(
-                <div key={index}>
-
+                <div className="experience-input-container" key={index}>
                   <div className="experience-input-row">
-                    <div className="experience-input-container">
+                    Experience {index+1}
+                    <i 
+                      className="fa-solid fa-xmark"
+                      onClick={event => this.removeExperience(index)}
+                    >
+                    </i>
+                  </div>
+                  <div className="experience-input-row">
+                    <div className="experience-input">
                       <label htmlFor="experience-input-title">Title:</label>
                       <input 
                         type="text" 
@@ -188,7 +201,7 @@ class App extends Component {
                       />
                     </div>
                     
-                    <div className="experience-input-container">
+                    <div className="experience-input">
                       <label htmlFor="experience-input-company">Company:</label>
                       <input 
                         type="text" 
@@ -201,7 +214,7 @@ class App extends Component {
                   </div>
 
                   <div className="experience-input-row">
-                    <div className="experience-input-container">
+                    <div className="experience-input">
                       <label htmlFor="experience-input-start">Start Date:</label>
                       <input 
                         type="text" 
@@ -212,7 +225,7 @@ class App extends Component {
                       />
                     </div>
 
-                    <div className="experience-input-container">
+                    <div className="experience-input">
                       <label htmlFor="experience-input-end">End Date:</label>
                       <input 
                         type="text" 
@@ -234,16 +247,16 @@ class App extends Component {
                     >
                     </textarea>
                   </div>
-
-
                 </div>
               )
             })}
-
-            <button onClick={this.addExperience}>Add More</button>
+            <div className="experience-input-button-row">
+              <button onClick={this.addExperience}>Add</button>
+            </div>
+            
       {/*
                   <div className="experience-input-row">
-                    <div className="experience-input-container">
+                    <div className="experience-input">
                       <label htmlFor="experience-input-title">Title:</label>
                       <input 
                         type="text" 
@@ -251,7 +264,7 @@ class App extends Component {
                       />
                     </div>
                     
-                    <div className="experience-input-container">
+                    <div className="experience-input">
                       <label htmlFor="experience-input-company">Company:</label>
                       <input 
                         type="text" 
@@ -261,7 +274,7 @@ class App extends Component {
                   </div>
 
                   <div className="experience-input-row">
-                    <div className="experience-input-container">
+                    <div className="experience-input">
                       <label htmlFor="experience-input-start">Start Date:</label>
                       <input 
                         type="text" 
@@ -269,7 +282,7 @@ class App extends Component {
                       />
                     </div>
 
-                    <div className="experience-input-container">
+                    <div className="experience-input">
                       <label htmlFor="experience-input-end">End Date:</label>
                       <input 
                         type="text" 
