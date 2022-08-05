@@ -30,15 +30,12 @@ class App extends Component {
           company: "Satriale's Pork Store",
           start: 'January 1999',
           end: 'June 2007',
-          description: `Cut meat, talk to customers, take it ease, 
-                        cut meat, talk to customers, take it ease,
-                        cut meat, talk to customers, take it ease,
-                        cut meat, talk to customers, take it ease,
-                        cut meat, talk to customers, take it ease,
-                        cut meat, talk to customers, take it ease,
-                        cut meat, talk to customers, take it ease
-                        `,
-          id: uniqid(),
+          description: `Cut meat, talk to customers, take it ease, `+ 
+                        `cut meat, talk to customers, take it ease, `+
+                        `cut meat, talk to customers, take it ease, `+
+                        `cut meat, talk to customers, take it ease, `+
+                        `cut meat, talk to customers, take it ease, `+
+                        `cut meat, talk to customers, take it ease, `,
         }
       ]
 
@@ -57,6 +54,36 @@ class App extends Component {
     })
   }
 
+  handleExpChange = (index, event) => {
+    const key = event.target.getAttribute('data-key')    
+    const updatedValue = event.target.value
+    //console.log(this.state.experiences[index][key])
+
+    const tempExperiences = this.state.experiences;
+    delete tempExperiences[index][key]
+    tempExperiences[index][key] = updatedValue;
+    
+    this.setState({
+      experiences: tempExperiences
+    })
+  }
+
+  addExperience = () => {
+    const experience = {
+      company: '',
+      title: '',
+      start: '',
+      end: '',
+      description: '' 
+    }
+
+    const tempExperiences = this.state.experiences;
+    tempExperiences.push(experience);
+    this.setState({
+      experiences : tempExperiences
+    })
+
+  }
 
   render(){
     const {info, experiences} = this.state;
@@ -145,9 +172,9 @@ class App extends Component {
           <fieldset className="experiences">
             <legend>Experiences</legend>
 
-            {this.state.experiences.map((experience) => {
+            {this.state.experiences.map((experience, index) => {
               return(
-                <span>
+                <div key={index}>
 
                   <div className="experience-input-row">
                     <div className="experience-input-container">
@@ -156,6 +183,8 @@ class App extends Component {
                         type="text" 
                         id="experience-input-title"
                         placeholder={experience.title}
+                        data-key = 'title'
+                        onChange={event => this.handleExpChange(index, event)}
                       />
                     </div>
                     
@@ -165,6 +194,8 @@ class App extends Component {
                         type="text" 
                         id="experience-input-company"
                         placeholder={experience.company}
+                        data-key = 'company'
+                        onChange={event => this.handleExpChange(index, event)}
                       />
                     </div>
                   </div>
@@ -176,6 +207,8 @@ class App extends Component {
                         type="text" 
                         id="experience-input-start"
                         placeholder={experience.start}
+                        data-key = 'start'
+                        onChange={event => this.handleExpChange(index, event)}
                       />
                     </div>
 
@@ -185,6 +218,8 @@ class App extends Component {
                         type="text" 
                         id="experience-input-end"
                         placeholder={experience.end}
+                        data-key = 'end'
+                        onChange={event => this.handleExpChange(index, event)}
                       />
                     </div>
                   </div>
@@ -194,14 +229,18 @@ class App extends Component {
                     <textarea 
                       id="experience-input-description"
                       placeholder={experience.description}
+                      data-key = 'description'
+                      onChange={event => this.handleExpChange(index, event)}
                     >
                     </textarea>
                   </div>
 
 
-                </span>
+                </div>
               )
             })}
+
+            <button onClick={this.addExperience}>Add More</button>
       {/*
                   <div className="experience-input-row">
                     <div className="experience-input-container">
