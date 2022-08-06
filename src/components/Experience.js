@@ -16,14 +16,14 @@ class Experience extends Component {
         {experiences.map((experience, index) => {
           if (index === 0){
             return( 
-              <div className='experience-render'>
+              <div className='experience-render' key={index}>
                 <h2>Professional Experience</h2>
-                <div className='experience-render' key={index}>
+                <div className='experience-render'>
                   <div className='experience-render-heading'>
                     <div className='experience-render-title'>
                       {experience.title}
                     </div>
-                    <div className='experience-render-date'>
+                    <div className='experience-render date'>
                       {experience.start} - {experience.end}
                     </div>
                   </div>
