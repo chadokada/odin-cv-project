@@ -9,7 +9,7 @@ class Info extends Component {
   render(){
     const info = this.props.info
     return (
-      <div className="info">
+      <div className="info-render">
         <div className="name">{info.name}</div>
         <table>
           <tbody>
