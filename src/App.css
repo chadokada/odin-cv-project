@@ -109,7 +109,7 @@ label{
   box-sizing: border-box;
 }
 
-.experience-input-button-row{
+.input-button-row{
   display: flex;
   width: 100%;
   justify-content: end;
@@ -121,6 +121,17 @@ label{
   width: 100%;
 }
 
+.skills-input-container{
+  display: flex;
+  flex-flow: row wrap;
+  gap: 5px;
+  padding-top: 10px;
+}
+
+.skill-input-container{
+  display: flex;
+  gap: 5px;
+}
 
 /*
 // Styles for the rendered resume
@@ -164,13 +175,22 @@ th{
 .experience-render,
 .educations-render-container,
 .education-render-header-container,
-.education-render-container{
+.education-render-container,
+.skills-render-container,
+.skills-render-header-container,
+.skill-render{
   width: 100%;
   display: flex;
   flex-flow: row wrap;
   margin-bottom: 0.5em;
   justify-content: space-between;
 }
+
+.skills-render-header-container,
+.skill-render > .skill-render{
+  margin-bottom: 0;
+}
+
 
 h2{
   width: 100%;
