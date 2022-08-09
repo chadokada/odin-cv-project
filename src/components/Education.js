@@ -10,7 +10,6 @@ class Education extends Component {
 
     return (
       <div className="educations-render-container">
-        
         {educations.map((education, index) => {
           if (index === 0){
             return( 
@@ -38,7 +37,7 @@ class Education extends Component {
             )
           } else {
             return(
-              <div className='education-render-container'>
+              <div className='education-render-container' key={index}>
                 <div className='education-render-container'>
                   <div className='education-render main'>
                     <div className='education-render-degree'>
@@ -60,13 +59,7 @@ class Education extends Component {
               </div>
             )
           }
-
-
         })}
-
-        
-
-
       </div>
     )
   }
