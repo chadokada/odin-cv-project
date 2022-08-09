@@ -11,8 +11,6 @@ class Experience extends Component {
     return (
       <div className="experiences-render-container">
         
-
-        
         {experiences.map((experience, index) => {
           if (index === 0){
             return( 
@@ -56,13 +54,7 @@ class Experience extends Component {
               </div>
             )
           }
-
-
         })}
-
-        
-
-
       </div>
     )
   }
